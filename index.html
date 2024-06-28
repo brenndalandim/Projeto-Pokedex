@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/pokedex.css" />
+    <link rel="stylesheet" href="./assets/css/pokemonCard.css" />
+    <title>Pokedex</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="topo"></div>
+    <section id="containerPokedex" class="content">
+        <h1>Pokedex</h1>
+
+        <ol class="pokemons" id="pokedex">
+            <!-- <li class="pokemon">
+                <span class="number">#001</span>
+                <span class="name">Bulbasaur</span>
+
+                <div class="detail">
+                    <ol class="types">
+                        <li class="type">grass</li>
+                        <li class="type">poison</li>
+                    </ol>
+                    <div>
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Bulbassaur">
+                    </div>
+                </div>
+            </li> -->
+        </ol>
+        <!-- <button id="pagAnterior"><-</button>
+        <button id="proxPag">-></button> -->
+        <div id="paginacao">
+            <button id="maisPokemonsBtn">+</button>
+        </div>
+        <a href="#topo"><button id="voltarTopo">^</button></a>
+    </section>
+    <section id="cardPokemon">
+        <!-- <div id="cardTop">
+            <button id="btnCloseCard"><-</button>
+            <h1 id="cardName">Bulbasaur</h1>
+            <span id="cardNumber">#001</span>
+            <ol id="cardTypes">
+                <li class="type">grass</li>
+                <li class="type">poison</li>
+            </ol>
+        </div>
+        <div id="cardImagem">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Bulbassaur">
+        </div>
+        <div id="cardInfos">
+            <ul id="infoBar">
+                <li>About</li>
+                <li>Base Stats</li>
+                <li>Evolution</li>
+                <li>Moves</li>
+            </ul>
+            <div class="infos">
+                <span>HP</span>
+                <span>45</span>
+                <div class="progressBar">
+                    <div class="progress" style="width:45%"></div>
+                </div>
+                <span>Attack</span>
+                <span>60</span>
+                <div class="progressBar">
+                    <div class="progress" style="width:60%"></div>
+                </div>
+                <span>Defense</span>
+                <span>48</span>
+                <div class="progressBar">
+                    <div class="progress" style="width:48%"></div>
+                </div>
+                <span>Sp. Atk</span>
+                <span>65</span>
+                <div class="progressBar">
+                    <div class="progress" style="width:65%"></div>
+                </div>
+                <span>Sp. Def</span>
+                <span>65</span>
+                <div class="progressBar">
+                    <div class="progress" style="width:65%"></div>
+                </div>
+                <span>Speed</span>
+                <span>45</span>
+                <div class="progressBar">
+                    <div class="progress" style="width:45%"></div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <script src="./assets/js/poke-api.js"></script>
+    <script src="./assets/js/pokemon-model.js"></script>
+    <script src="./assets/js/cardPokemon.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
