@@ -16,6 +16,7 @@ h1{
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .pokemon .number{
