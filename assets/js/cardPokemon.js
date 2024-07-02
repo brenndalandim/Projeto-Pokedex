@@ -1,5 +1,7 @@
+let containerCardPokemon = document.getElementById("containerCardPokemon")
 let cardPokemon = document.getElementById("cardPokemon")
 let containerPokedex = document.getElementById("containerPokedex")
+let btnVoltarTopo = document.getElementById('voltarTopo')
 
 function stats(statsPokemon){
     if(statsPokemon.base_stat <=100){
@@ -14,21 +16,20 @@ function stats(statsPokemon){
 }
 
 async function sobrePokemon (element){
-    let nomePokemon = element.children[1].innerText
-    nomePokemon = nomePokemon[0].toLowerCase() + nomePokemon.substring(1)
-
-    cardPokemon.style.visibility = "visible"
+    let nomePokemon = element.children[1].innerText.toLowerCase()
+    
+    containerCardPokemon.style.visibility = "visible"
+    btnVoltarTopo.style.visibility = 'hidden'
     containerPokedex.style.filter = "blur(15px)"
     
     let pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`)
         .then((response) => response.json())
         .then((dados) => dados)
-    console.log(pokemon.stats)
 
     let pokemonTypes = pokemon.types.map((typeSlot) => typeSlot.type.name)
     let pokemonType = pokemonTypes[0]
-    console.log(pokemonType)
     cardPokemon.className = pokemonType
+
     cardPokemon.innerHTML = `
     <div id="cardTop">
             <button id="btnCloseCard"><-</button>
@@ -85,12 +86,19 @@ async function sobrePokemon (element){
 
     let btnCloseCard = document.getElementById("btnCloseCard")
     btnCloseCard.addEventListener("click", () => {
-        cardPokemon.style.visibility = "hidden"
+        containerCardPokemon.style.visibility = "hidden"
+        btnVoltarTopo.style.visibility = 'visible'
         containerPokedex.style.filter = "blur(0px)"
     })
 
     window.addEventListener("keydown", (event) => {
         if (event.key = "Escape"){
+            btnCloseCard.click()
+        }
+    })
+
+    document.addEventListener('mousedown', (event) => {
+        if (!cardPokemon.contains(event.target)){
             btnCloseCard.click()
         }
     })
